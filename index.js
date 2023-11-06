@@ -357,17 +357,17 @@ function convertArrayToObj(arr) {
     return {};
   } else {
     let array = {};
-    for (let index = 0; index === arr.length; index++) {
+    for (let index = 0; index < arr.length; index++) {
       let [key, value] = arr[index];
 
       if (array.hasOwnProperty(key) === true) {
-        return `У масиві є дубльований ключ: ${key}`;
+        console.log`У масиві є дубльований ключ: ${key}`;
       } else {
         array[key] = value;
       }
     }
 
-    // return Object.fromEntries(array);
+    return Object.fromEntries(arr);
   }
 }
 
